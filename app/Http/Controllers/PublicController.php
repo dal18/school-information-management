@@ -36,7 +36,7 @@ class PublicController extends Controller
                 'activity_logs.model_type',
                 'activity_logs.model_id',
                 'activity_logs.created_at',
-                'users.full_name as user_name'
+                DB::raw('CONCAT(users.first_name, " ", COALESCE(users.middle_name, ""), " ", users.last_name) as user_name')
             )
             ->whereIn('activity_logs.action', ['create', 'update'])
             ->whereIn('activity_logs.model_type', ['Admission', 'Post', 'Story', 'Announcement', 'Activity'])
