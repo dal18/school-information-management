@@ -28,7 +28,7 @@ class ScheduleSeeder extends Seeder
             $teacher1 = \App\Models\User::create([
                 'user_name' => 'maria.santos',
                 'first_name' => 'Maria',
-                'midle_name' => '',
+                'middle_name' => '',
                 'last_name' => 'Santos',
                 'email' => 'maria.santos@school.edu',
                 'password' => bcrypt('password'),
@@ -38,7 +38,7 @@ class ScheduleSeeder extends Seeder
             $teacher2 = \App\Models\User::create([
                 'user_name' => 'juan.reyes',
                 'first_name' => 'Juan',
-                'midle_name' => '',
+                'middle_name' => '',
                 'last_name' => 'Reyes',
                 'email' => 'juan.reyes@school.edu',
                 'password' => bcrypt('password'),
@@ -48,7 +48,7 @@ class ScheduleSeeder extends Seeder
             $teacher3 = \App\Models\User::create([
                 'user_name' => 'ana.cruz',
                 'first_name' => 'Ana',
-                'midle_name' => '',
+                'middle_name' => '',
                 'last_name' => 'Cruz',
                 'email' => 'ana.cruz@school.edu',
                 'password' => bcrypt('password'),
@@ -65,7 +65,7 @@ class ScheduleSeeder extends Seeder
                 \App\Models\User::create([
                     'user_name' => 'default.teacher',
                     'first_name' => 'Default',
-                    'midle_name' => '',
+                    'middle_name' => '',
                     'last_name' => 'Teacher',
                     'email' => 'teacher@school.edu',
                     'password' => bcrypt('password'),

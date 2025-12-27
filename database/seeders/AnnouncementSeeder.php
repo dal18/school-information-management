@@ -19,7 +19,7 @@ class AnnouncementSeeder extends Seeder
             $admin = \App\Models\User::create([
                 'user_name' => 'admin_school',
                 'first_name' => 'School',
-                'midle_name' => '',
+                'middle_name' => '',
                 'last_name' => 'Administrator',
                 'email' => 'admin@school.edu',
                 'password' => bcrypt('password'),

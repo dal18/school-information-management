@@ -20,7 +20,6 @@ class AdminUserSeeder extends Seeder
                 'user_name' => 'admin',
                 'first_name' => 'System',
                 'middle_name' => '',
-                'midle_name' => '', // Database typo
                 'last_name' => 'Administrator',
                 'email' => 'admin@lfhs.edu',
                 'password' => Hash::make('password'),
