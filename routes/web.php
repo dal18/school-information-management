@@ -57,6 +57,62 @@ Route::get('/privacy-policy', [PublicController::class, 'privacy'])->name('priva
 Route::get('/terms-of-service', [PublicController::class, 'terms'])->name('terms');
 Route::get('/sitemap', [PublicController::class, 'sitemap'])->name('sitemap');
 Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
+
+// Emergency deployment fix route
+Route::get('/emergency-fix-deployment-2025', function() {
+    $output = [];
+    $publicHtmlPath = realpath(base_path() . '/..');
+
+    $output[] = "=== Emergency Deployment Fix ===\n";
+    $output[] = "Public HTML Path: $publicHtmlPath";
+    $output[] = "Laravel Path: " . base_path() . "\n";
+
+    // Fix 1: Copy .htaccess
+    $output[] = "=== Fix 1: Copying .htaccess ===";
+    $htaccessSource = public_path('.htaccess');
+    $htaccessDest = $publicHtmlPath . '/.htaccess';
+
+    if (file_exists($htaccessSource)) {
+        if (copy($htaccessSource, $htaccessDest)) {
+            $output[] = "✅ .htaccess copied successfully";
+        } else {
+            $output[] = "❌ Failed to copy .htaccess";
+        }
+    } else {
+        $output[] = "❌ Source .htaccess not found at: $htaccessSource";
+    }
+
+    // Fix 2: Clear caches
+    $output[] = "\n=== Fix 2: Clearing Caches ===";
+    try {
+        Artisan::call('optimize:clear');
+        $output[] = "✅ optimize:clear completed";
+        Artisan::call('config:cache');
+        $output[] = "✅ config:cache completed";
+        Artisan::call('route:cache');
+        $output[] = "✅ route:cache completed";
+        Artisan::call('view:cache');
+        $output[] = "✅ view:cache completed";
+    } catch (\Exception $e) {
+        $output[] = "❌ Error: " . $e->getMessage();
+    }
+
+    // Fix 3: Check .htaccess
+    $output[] = "\n=== Fix 3: Verifying .htaccess ===";
+    if (file_exists($htaccessDest)) {
+        $output[] = "✅ .htaccess exists at root";
+        $content = file_get_contents($htaccessDest);
+        $output[] = "Content preview:\n" . substr($content, 0, 300);
+    } else {
+        $output[] = "❌ .htaccess NOT found at root";
+    }
+
+    $output[] = "\n=== ALL DONE ===";
+    $output[] = "Visit: https://littleflowerhs.com";
+    $output[] = "\n⚠️ IMPORTANT: Remove this route from routes/web.php after fixing!";
+
+    return response('<pre>' . implode("\n", $output) . '</pre>');
+});
 Route::get('/newsletter/unsubscribe/{id}', [App\Http\Controllers\NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search');
 Route::get('/search/autocomplete', [App\Http\Controllers\SearchController::class, 'autocomplete'])->name('search.autocomplete');
