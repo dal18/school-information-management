@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('activities', function (Blueprint $table) {
-            $table->string('youtube_url')->nullable()->after('link_image');
-            $table->string('facebook_url')->nullable()->after('youtube_url');
+            if (!Schema::hasColumn('activities', 'youtube_url')) {
+                $table->string('youtube_url')->nullable()->after('image');
+            }
+            if (!Schema::hasColumn('activities', 'facebook_url')) {
+                $table->string('facebook_url')->nullable()->after('youtube_url');
+            }
         });
     }
 
