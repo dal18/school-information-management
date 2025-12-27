@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::table('feedback', function (Blueprint $table) {
             if (!Schema::hasColumn('feedback', 'status')) {
-                $table->enum('status', ['New', 'In Progress', 'Resolved', 'Closed'])->default('New')->after('Concern');
+                $table->enum('status', ['New', 'In Progress', 'Resolved', 'Closed'])->default('New')->after('message');
             }
             if (!Schema::hasColumn('feedback', 'reply')) {
-                $table->text('reply')->nullable()->after('Concern');
+                $table->text('reply')->nullable()->after('message');
             }
             if (!Schema::hasColumn('feedback', 'reply_by')) {
-                $table->unsignedBigInteger('reply_by')->nullable()->after('Concern');
+                $table->unsignedBigInteger('reply_by')->nullable()->after('message');
             }
             if (!Schema::hasColumn('feedback', 'reply_date')) {
-                $table->timestamp('reply_date')->nullable()->after('Concern');
+                $table->timestamp('reply_date')->nullable()->after('message');
             }
         });
     }
