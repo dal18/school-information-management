@@ -1,0 +1,895 @@
+/* Enhanced Animation Styles for LFHS */
+/* ==================================== */
+
+/* Base Animation Classes */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-animate].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade Animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale Animations */
+.scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Bounce Animation */
+.bounce {
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+/* Enhanced Card Styles */
+.card-interactive {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-interactive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card-interactive:hover::before {
+    opacity: 1;
+}
+
+.card-interactive:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Ripple Effect */
+.btn-ripple,
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Enhanced Form Inputs */
+.input-focused input,
+.input-focused textarea,
+.input-focused select {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input-focused label {
+    color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+input, textarea, select {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    transform: translateY(-1px);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #e7debe;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(400px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    max-width: 400px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.toast-success {
+    border-left: 4px solid #10b981;
+}
+
+.toast-success .toast-icon {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.toast-error {
+    border-left: 4px solid #ef4444;
+}
+
+.toast-error .toast-icon {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.toast-warning {
+    border-left: 4px solid #f59e0b;
+}
+
+.toast-warning .toast-icon {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.toast-info {
+    border-left: 4px solid #3b82f6;
+}
+
+.toast-info .toast-icon {
+    background: #dbeafe;
+    color: #3b82f6;
+}
+
+.toast-message {
+    flex: 1;
+    font-size: 14px;
+    color: #374151;
+}
+
+/* Navbar Enhancements */
+nav {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+/* Page Transition Overlay */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.page-transition-overlay::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.page-transition-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Tooltip Styles */
+.tooltip-popup {
+    background: #1f2937;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.tooltip-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #1f2937;
+}
+
+.tooltip-popup.show {
+    opacity: 1;
+}
+
+/* Gradient Animations */
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Animation */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Glow Effect */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeletonLoading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Slide Animations */
+.slide-in-bottom {
+    animation: slideInBottom 0.6s ease-out;
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Stagger Animation */
+[data-stagger] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-stagger].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image Lazy Load */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+img[data-src].loaded {
+    opacity: 1;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background: #e5e7eb;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    animation: progressAnimation 2s ease infinite;
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Modal Animations */
+.modal-backdrop {
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Table Row Hover */
+table tbody tr {
+    transition: all 0.2s ease;
+}
+
+table tbody tr:hover {
+    transform: translateX(4px);
+    box-shadow: -4px 0 0 #3b82f6;
+}
+
+/* Enhanced Shadows */
+.shadow-smooth {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-smooth:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Text Gradient */
+.text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Underline Animation */
+.underline-animate {
+    position: relative;
+}
+
+.underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.underline-animate:hover::after {
+    width: 100%;
+}
+
+/* Responsive Animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Page Load Animation - DISABLED */
+/* body:not(.loaded) {
+    overflow: hidden;
+} */
+
+/* body.loaded {
+    animation: pageLoad 0.6s ease;
+} */
+
+/* @keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} */
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+    transform-origin: left;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+/* ============================================ */
+/* Z-INDEX LAYERS */
+/* ============================================ */
+/*
+ * Z-Index Hierarchy (Updated):
+ * - 9999+: Toasts, Modals, Overlays
+ * - 1050: Navbar Dropdowns (must be above navbar)
+ * - 1000: Navbar (sticky/fixed)
+ * - 100: Fixed elements
+ * - 10: Elevated content
+ * - 1: Standard sections & hero
+ * - 0: Base layer
+ *
+ * Note: Public navbar (bg-blue-900) is sticky
+ * Note: Dropdowns use z-index 1050 to stay above navbar
+ */
+
+/* ============================================ */
+/* GLOBAL BACKGROUND COLOR OVERRIDE */
+/* ============================================ */
+
+/* Main background color - Cream/Beige (#e7debe) */
+body,
+html {
+    background-color: #e7debe !important;
+}
+
+/* Sections and main content areas */
+main,
+section,
+.content-section {
+    background-color: #e7debe;
+}
+
+/* Card backgrounds */
+.card,
+.bg-white {
+    background-color: #e7debe !important;
+}
+
+/* ============================================ */
+/* GSAP-SPECIFIC ANIMATIONS */
+/* ============================================ */
+
+/* GSAP Ripple Effect */
+.gsap-ripple {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Text Split for Character Animations - DISABLED for simpler animations */
+/* .char {
+    display: inline-block;
+    transform-origin: 50% 50%;
+}
+
+.word {
+    display: inline-block;
+    margin-right: 0.25em;
+} */
+
+/* GSAP Smooth Transforms */
+.gsap-animate {
+    will-change: transform, opacity;
+}
+
+/* Logo Animations */
+.logo,
+[class*="logo"] {
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+/* Image Parallax Container */
+.parallax-image {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* 3D Card Transform */
+.card,
+.card-interactive {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Smooth GPU Acceleration */
+.gsap-gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Hero Section Specific */
+.carousel-slide h1,
+.hero-title {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Enhanced Button States */
+button,
+.btn,
+a.button,
+[class*="btn-"] {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+/* Navbar Smooth Transform */
+nav,
+.navbar,
+header nav {
+    will-change: transform, box-shadow, background-color;
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* Public Navbar - Always fixed at top, transparent when at page top, solid when scrolled */
+nav.bg-blue-900 {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent !important;
+    border-bottom: 1px solid transparent !important;
+    backdrop-filter: blur(0px) !important;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-bottom-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Public Navbar - Scrolled state (solid blue background when scrolling) */
+nav.bg-blue-900.navbar-scrolled {
+    background-color: #1e3a8a !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* Add spacing to body when navbar is fixed */
+body:has(nav.bg-blue-900) {
+    padding-top: 0;
+}
+
+/* Hero section - full height to go behind transparent navbar */
+body:has(nav.bg-blue-900) section:first-of-type,
+body:has(nav.bg-blue-900) .hero,
+body:has(nav.bg-blue-900) main > section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Authenticated Navbar - Relative positioning */
+nav.bg-white {
+    position: relative;
+}
+
+/* Ensure navbar dropdowns appear above all content */
+nav div[x-show],
+nav .dropdown,
+nav [class*="dropdown"],
+.navbar-dropdown,
+.nav-dropdown {
+    z-index: 1050 !important;
+}
+
+/* Dropdown menus absolute positioning fix */
+nav div[x-show] > div,
+nav .dropdown-menu,
+nav [class*="dropdown-"] > div {
+    z-index: 1050 !important;
+    position: absolute;
+}
+
+/* Ensure dropdown content stays on top during scroll */
+nav div[class*="absolute"],
+nav div[class*="mt-"],
+nav > div > div > div[x-show] {
+    z-index: 1050 !important;
+}
+
+/* Section Fade Container */
+section,
+.section,
+.content-block {
+    will-change: opacity, transform;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section - Lower z-index to stay behind navbar */
+.hero,
+.hero-section,
+section.hero,
+.carousel-container,
+.carousel-slide {
+    position: relative;
+    z-index: 1;
+}
+
+/* Stagger Children */
+.gsap-stagger-parent > * {
+    will-change: opacity, transform;
+}
+
+/* Image Clip Path Reveal */
+.featured-image,
+.highlight-image {
+    overflow: hidden;
+}
+
+/* Text Gradient Animation Support */
+h2,
+h3,
+h4,
+.section-title {
+    transform: translateZ(0);
+    will-change: opacity, transform;
+}
+
+/* Counter Animation */
+[data-counter] {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Link Underline */
+a {
+    position: relative;
+}
+
+/* Card 3D Perspective */
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* GSAP Loading States */
+.gsap-loading {
+    pointer-events: none;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Reduce animation complexity on mobile */
+    .char {
+        animation-duration: 0.4s !important;
+    }
+
+    /* Disable parallax on mobile for better performance */
+    .parallax-image {
+        transform: none !important;
+    }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: no-preference) {
+    /* Enable smooth animations */
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Print Styles - Disable Animations */
+@media print {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}

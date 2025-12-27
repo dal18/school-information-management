@@ -1,0 +1,366 @@
+<nav x-data="{ open: false }" class="bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900 border-b border-primary-700/50 sticky top-0 z-50 shadow-lg backdrop-blur-lg transition-all duration-300">
+    <!-- Primary Navigation Menu -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex">
+                <!-- Logo -->
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-3">
+                        <img src="{{ asset('images/logo.png') }}" alt="LFHS Logo" class="h-10 w-10 rounded-full">
+                        <div class="hidden sm:block">
+                            <div class="text-white font-bold text-lg leading-tight font-serif">Little Flower High School</div>
+                            <div class="text-secondary-300 text-xs font-sans">Excellence in Education</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden space-x-4 sm:-my-px sm:ml-10 sm:flex">
+                    <a href="{{ route('home') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('home') ? 'border-secondary-400 text-white focus:border-secondary-300' : 'border-transparent text-white/80 hover:text-white hover:border-secondary-400 focus:text-white focus:border-secondary-400' }}">
+                        Home
+                    </a>
+
+                    <!-- About Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-nav-dropdown align="left">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-white/80 hover:text-white hover:border-secondary-400 focus:outline-none focus:text-white focus:border-secondary-400 transition duration-150 ease-in-out">
+                                    <div>About</div>
+                                    <div class="ml-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+
+                            <x-nav-dropdown-item :href="route('about')" icon="fas fa-school">
+                                About Us
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('history')" icon="fas fa-history">
+                                Our History
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('mission-vision')" icon="fas fa-bullseye">
+                                Mission & Vision
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('administration')" icon="fas fa-user-tie">
+                                Administration
+                            </x-nav-dropdown-item>
+                        </x-nav-dropdown>
+                    </div>
+
+                    <!-- Academics Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-nav-dropdown align="left">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-white/80 hover:text-white hover:border-secondary-400 focus:outline-none focus:text-white focus:border-secondary-400 transition duration-150 ease-in-out">
+                                    <div>Academics</div>
+                                    <div class="ml-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+
+                            <x-nav-dropdown-item :href="route('admissions')" icon="fas fa-user-plus">
+                                Admissions
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('courses')" icon="fas fa-book-open">
+                                Courses
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('schedules')" icon="fas fa-calendar-alt">
+                                Class Schedules
+                            </x-nav-dropdown-item>
+                        </x-nav-dropdown>
+                    </div>
+
+                    <!-- Campus Life Dropdown -->
+                    <div class="hidden sm:flex sm:items-center">
+                        <x-nav-dropdown align="left">
+                            <x-slot name="trigger">
+                                <button class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-white/80 hover:text-white hover:border-secondary-400 focus:outline-none focus:text-white focus:border-secondary-400 transition duration-150 ease-in-out">
+                                    <div>Campus Life</div>
+                                    <div class="ml-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+
+                            <x-nav-dropdown-item :href="route('activities')" icon="fas fa-running">
+                                Activities
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('facilities')" icon="fas fa-building">
+                                Facilities
+                            </x-nav-dropdown-item>
+                            <x-nav-dropdown-item :href="route('announcements')" icon="fas fa-bullhorn">
+                                Announcements
+                            </x-nav-dropdown-item>
+                        </x-nav-dropdown>
+                    </div>
+
+                    <a href="{{ route('blog') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('blog') ? 'border-secondary-400 text-white focus:border-secondary-300' : 'border-transparent text-white/80 hover:text-white hover:border-secondary-400 focus:text-white focus:border-secondary-400' }}">
+                        News
+                    </a>
+
+                    <a href="{{ route('testimonials.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('testimonials.*') ? 'border-secondary-400 text-white focus:border-secondary-300' : 'border-transparent text-white/80 hover:text-white hover:border-secondary-400 focus:text-white focus:border-secondary-400' }}">
+                        Testimonials
+                    </a>
+
+                    <a href="{{ route('contact') }}" class="inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 transition duration-150 ease-in-out {{ request()->routeIs('contact') ? 'border-secondary-400 text-white focus:border-secondary-300' : 'border-transparent text-white/80 hover:text-white hover:border-secondary-400 focus:text-white focus:border-secondary-400' }}">
+                        Contact
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side (Search, Feedback, Notifications, Auth Links) -->
+            <div class="hidden sm:flex sm:items-center space-x-0">
+                <div class="w-px h-6 bg-white/20 mx-2"></div>
+                <!-- Search Button -->
+                <button @click="$dispatch('open-search')" class="p-2 text-white/80 hover:text-white hover:bg-primary-700/50 rounded-lg transition duration-150">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+
+                @auth
+                    <!-- Notifications -->
+                    <div class="relative" x-data="{ open: false, unreadCount: {{ auth()->check() && auth()->user()->access_rights === 'Student' ? (isset($sidebarStats['unseen_replies']) ? $sidebarStats['unseen_replies'] : 0) : 0 }} }">
+                        <button @click="open = !open" class="relative p-2 text-white/80 hover:text-white hover:bg-primary-700/50 rounded-lg transition duration-150">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                            <span x-show="unreadCount > 0" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
+                                <span x-text="unreadCount"></span>
+                            </span>
+                        </button>
+
+                        <!-- Notifications Dropdown -->
+                        <div x-show="open" @click.away="open = false" x-transition class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-50 border border-gray-200">
+                            <div class="p-4 border-b border-gray-200">
+                                <h3 class="text-lg font-semibold text-gray-900">Notifications</h3>
+                            </div>
+                            <div class="max-h-96 overflow-y-auto">
+                                @if(auth()->user()->access_rights === 'Student' && isset($sidebarStats['unseen_replies']) && $sidebarStats['unseen_replies'] > 0)
+                                    <a href="{{ route('student.contact-messages.index') }}" class="block p-4 hover:bg-gray-50 border-b border-gray-100">
+                                        <div class="flex items-start">
+                                            <div class="flex-shrink-0">
+                                                <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center">
+                                                    <svg class="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="ml-3 flex-1">
+                                                <p class="text-sm font-medium text-gray-900">New Message Replies</p>
+                                                <p class="text-sm text-gray-500">You have {{ $sidebarStats['unseen_replies'] }} new {{ $sidebarStats['unseen_replies'] == 1 ? 'reply' : 'replies' }}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="p-8 text-center text-gray-500">
+                                        <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                                        </svg>
+                                        <p class="text-sm">No new notifications</p>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Link -->
+                    <a href="{{ auth()->user()->access_rights === 'Student' ? route('student.feedback') : route('feedback') }}" class="p-2 text-white/80 hover:text-white hover:bg-primary-700/50 rounded-lg transition duration-150" title="Send Feedback">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                        </svg>
+                    </a>
+
+                    <!-- User Dropdown -->
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button class="flex items-center text-sm font-medium text-white hover:text-gray-200 focus:outline-none transition duration-150 ease-in-out">
+                                <div class="flex items-center space-x-2">
+                                    <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('images/default-avatar.png') }}"
+                                         alt="{{ Auth::user()->name }}"
+                                         class="h-8 w-8 rounded-full object-cover border-2 border-secondary-400">
+                                    <span class="hidden md:block">{{ Auth::user()->name }}</span>
+                                    <svg class="ml-1 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <div class="px-4 py-2 border-b border-gray-100">
+                                <div class="text-sm font-medium text-gray-900">{{ Auth::user()->name }}</div>
+                                <div class="text-xs text-gray-500">{{ Auth::user()->email }}</div>
+                            </div>
+
+                            <x-dropdown-link :href="route('dashboard')">
+                                <i class="fas fa-home w-4 mr-2"></i>
+                                Dashboard
+                            </x-dropdown-link>
+
+                            <x-dropdown-link :href="route('profile.edit')">
+                                <i class="fas fa-user w-4 mr-2"></i>
+                                Profile
+                            </x-dropdown-link>
+
+                            <div class="border-t border-gray-100"></div>
+
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    <i class="fas fa-sign-out-alt w-4 mr-2"></i>
+                                    Log Out
+                                </x-dropdown-link>
+                            </form>
+                        </x-slot>
+                    </x-dropdown>
+                @else
+                    <!-- Feedback for Guests -->
+                    <a href="{{ route('feedback') }}" class="p-2 text-white/80 hover:text-white hover:bg-primary-700/50 rounded-lg transition duration-150" title="Send Feedback">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                        </svg>
+                    </a>
+
+                    <a href="{{ route('login') }}" class="text-blue-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
+                    <a href="{{ route('register') }}" class="ml-2 inline-flex items-center px-4 py-2 bg-gradient-to-r from-accent-500 to-accent-600 border border-transparent rounded-lg font-semibold text-xs text-white uppercase tracking-widest hover:from-accent-600 hover:to-accent-700 focus:from-accent-600 focus:to-accent-700 active:from-accent-700 active:to-accent-800 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 shadow-md hover:shadow-lg focus:ring-offset-2 transition ease-in-out duration-150">
+                        Register
+                    </a>
+                @endauth
+            </div>
+
+            <!-- Hamburger -->
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-white/80 hover:text-white hover:bg-primary-700/50 focus:outline-none focus:bg-primary-700/50 focus:text-white transition duration-150 ease-in-out">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Responsive Navigation Menu -->
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                Home
+            </x-responsive-nav-link>
+
+            <!-- About Links -->
+            <div class="border-t border-primary-700/30 pt-2 mt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-white/60 uppercase">About</div>
+                <x-responsive-nav-link :href="route('about')">About Us</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('history')">Our History</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('mission-vision')">Mission & Vision</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('administration')">Administration</x-responsive-nav-link>
+            </div>
+
+            <!-- Academics Links -->
+            <div class="border-t border-primary-700/30 pt-2 mt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-white/60 uppercase">Academics</div>
+                <x-responsive-nav-link :href="route('admissions')">Admissions</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('courses')">Courses</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('schedules')">Class Schedules</x-responsive-nav-link>
+            </div>
+
+            <!-- Campus Life Links -->
+            <div class="border-t border-primary-700/30 pt-2 mt-2">
+                <div class="px-4 py-2 text-xs font-semibold text-white/60 uppercase">Campus Life</div>
+                <x-responsive-nav-link :href="route('activities')">Activities</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('facilities')">Facilities</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('announcements')">Announcements</x-responsive-nav-link>
+            </div>
+
+            <div class="border-t border-primary-700/30 pt-2 mt-2">
+                <x-responsive-nav-link :href="route('blog')">News</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('testimonials.index')">Testimonials</x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('contact')">Contact</x-responsive-nav-link>
+            </div>
+        </div>
+
+        <!-- Responsive Settings Options -->
+        @auth
+            <div class="pt-4 pb-1 border-t border-primary-700/30">
+                <div class="px-4 pb-3">
+                    <div class="flex items-center space-x-3">
+                        <img src="{{ Auth::user()->profile_image ? asset('storage/' . Auth::user()->profile_image) : asset('images/default-avatar.png') }}"
+                             alt="{{ Auth::user()->name }}"
+                             class="h-10 w-10 rounded-full object-cover">
+                        <div>
+                            <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3 space-y-1">
+                    <x-responsive-nav-link :href="route('dashboard')">
+                        <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        Dashboard
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('profile.edit')">
+                        <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        Profile
+                    </x-responsive-nav-link>
+
+                    @if(auth()->user()->access_rights === 'Student' && isset($sidebarStats['unseen_replies']) && $sidebarStats['unseen_replies'] > 0)
+                        <x-responsive-nav-link :href="route('student.contact-messages.index')">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                            </svg>
+                            Notifications
+                            <span class="ml-2 px-2 py-0.5 bg-red-600 text-white text-xs rounded-full">{{ $sidebarStats['unseen_replies'] }}</span>
+                        </x-responsive-nav-link>
+                    @endif
+
+                    <x-responsive-nav-link :href="auth()->user()->access_rights === 'Student' ? route('student.feedback') : route('feedback')">
+                        <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                        </svg>
+                        Send Feedback
+                    </x-responsive-nav-link>
+
+                    <!-- Logout -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-responsive-nav-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                            </svg>
+                            Log Out
+                        </x-responsive-nav-link>
+                    </form>
+                </div>
+            </div>
+        @else
+            <div class="py-4 border-t border-primary-700/30">
+                <div class="space-y-1">
+                    <x-responsive-nav-link :href="route('feedback')">
+                        <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                        </svg>
+                        Send Feedback
+                    </x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('login')">Log in</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('register')">Register</x-responsive-nav-link>
+                </div>
+            </div>
+        @endauth
+    </div>
+</nav>

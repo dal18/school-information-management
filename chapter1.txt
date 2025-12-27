@@ -1,0 +1,214 @@
+                                    Chapter 1
+                                   INTRODUCTION
+Background of the study
+   An information system is like a living network made up of several key parts that work hand in hand to keep things running smoothly. Hardware covers all the physical tools computers, servers, and networking gear that make it possible to process and store data. Software is the brain of the system, made up of programs and apps that let people use, manage, and analyze information. At the heart of it all is data the raw facts and figures that, when processed, become meaningful insights. Then there are the people, from IT experts who design and maintain the system to managers and everyday users who rely on it to get their jobs done. Finally, processes act as the system's playbook, outlining the proper steps and standards to make sure everything runs accurately, securely, and efficiently.
+   Information systems come in different forms depending on what they're meant to do. Transaction Processing Systems (TPS) handle everyday business activities like recording sales or tracking inventory. Management Information Systems (MIS) provide organized reports that help managers make smarter decisions. Decision Support Systems (DSS) dig deeper, using data analysis and models to guide complex choices. And Enterprise Resource Planning (ERP) systems tie all parts of a business together finance, HR, sales, and more into one unified platform that helps everything flow seamlessly.
+   The Little Flower High School (LFHS) has stood as a beacon of faith and learning in Peñarrubia, Abra since its founding in 1961. Born from the vision of Reverend Father Carlos Puetz, S.V.D., then the parish priest of St. Therese of the Child Jesus Parish, the school was established under the Diocese of Bangued with one heartfelt mission to bring quality Catholic education closer to the youth of Peñarrubia and neighboring barangays who had little access to high schools in Bangued. Father Puetz dreamed of a place where students could grow not only in knowledge but also in faith, character, and compassion. The name "Little Flower" was chosen in honor of St. Therese of the Child Jesus, the parish's patron saint, whose "Little Way" of simplicity, humility, and love continues to guide the school's spirit to this day.
+   When LFHS first opened its doors, only forty-six young students filled its classrooms a modest beginning that would blossom over time. With the unwavering support of the parish and the local community, the school slowly grew, adding more grade levels, improving its facilities, and nurturing a generation of learners who carried both wisdom and values into the world. Through the years, LFHS remained deeply rooted in its Catholic identity, weaving faith and moral formation into every lesson, activity, and milestone.
+   Today, Little Flower High School stands as a proud testament to Father Puetz's dream. Recognized by the Department of Education and included in the Private Education Assistance Committee (PEAC) program, the school continues to thrive. It has embraced educational reforms like the K-12 program and now offers Senior High School strands such as HUMSS (Humanities and Social Sciences), ensuring students are well-prepared for college and beyond. More than six decades later, LFHS remains a place where young minds are shaped, hearts are guided, and faith is kept alive a living legacy of love, learning, and service to the people of Peñarrubia.
+   Little Flower High School (LFHS) continues to grow as a haven for learners from Grades 7 to 12, offering a complete secondary education founded on academic excellence, discipline, and faith. The school takes pride in its facilities that create a balanced environment for both learning and personal development. At the heart of the campus lies the school library, a quiet sanctuary filled with books and learning materials that nurture curiosity and a lifelong love for reading. The faculty room serves as the workspace of dedicated teachers who guide, mentor, and inspire their students every day.
+   The computer room provides students with access to modern technology, helping them build essential digital skills in an increasingly connected world. The canteen offers a friendly space where students can relax, share meals, and enjoy healthy, affordable food options during their breaks. For the safety and well-being of everyone on campus, the school clinic stands ready to provide first aid and basic medical care. Clean and accessible comfort rooms (CRs) are also maintained throughout the school to ensure the comfort of both students and staff.
+   To accommodate students who live farther from the campus, LFHS offers a dormitory that provides a safe and nurturing home away from home a place where friendships are built and values are strengthened. The Audio-Visual Room is equipped with multimedia tools that make classes more engaging and interactive, while the Achievements Room proudly displays the trophies, medals, and certificates that symbolize the hard work, talent, and victories of the Little Flower community through the years.
+   Together, these facilities reflect LFHS's commitment to holistic education shaping students not just intellectually, but also emotionally, socially, and spiritually. Every corner of the campus tells a story of growth, faith, and excellence proof that Little Flower High School remains a true garden where young minds blossom.
+   The vision of the Little Flower High School of Peñarrubia is to be an agent of the Diocese of Bangued in its educational apostolate for the integral formation of the young people of Abra who are mature Christians and enlightened and empowered, model citizens. Its vision will make the progress of the Theresians as they continue to grow in faith, wisdom, and service.
+   In line with this, the mission of the Little Flower High School of Peñarrubia is to educate and influence the young people of Abra to become mature Christians who have trust and faith in God, love and concern for others, and the spirit of service for the Church. It also aims to form enlightened, model citizens who are physically and mentally developed, socially and ecologically responsible, culture-oriented and economically self-reliant, as well as nationalistic and upright.
+   The Little Flower High School of Peñarrubia demonstrates its dedication to providing a holistic educational experience through a wide array of events and activities that foster both academic excellence and personal development. These initiatives are designed to nurture well-rounded individuals who are prepared to make meaningful contributions to society. The school actively engages in community outreach programs that extend assistance to those in need, emphasizing compassion and social responsibility. Religious events hold a special place in the school's formation program, including the observance of feast days, recollections that encourage reflection and spiritual growth, as well as confession and confirmation ceremonies that deepen faith.
+   In addition, the school celebrates significant events such as intramurals that promote physical development and teamwork, club culmination activities that highlight student talents and leadership, and the graduation ceremony that honors academic achievement and perseverance.
+   The Little Flower High School of Peñarrubia offers a comprehensive range of educational programs designed to meet the developmental needs of learners across different academic levels. It provides Grade School education that focuses on foundational learning and character building, as well as High School education that delivers a more advanced curriculum preparing students for higher education. The school also offers Senior High School with specialized academic strands, such as the Humanities and Social Sciences (HUMSS) strand, which equips students with the essential skills, knowledge, and values needed for their future academic pursuits and professional careers.
+   The School Information Management System (SIMS) proposed for Little Flower High School of Peñarrubia is a comprehensive, Laravel-powered web-based platform that represents a significant step toward modernization, communication efficiency, and institutional growth. Built using Laravel Framework with PHP and MySQL database, the system implements Laravel Breeze for secure authentication and Blade Templates for the frontend interface. For many years, the school depended on manual methods such as printed flyers, bulletin boards, and word-of-mouth communication to deliver daily announcements, admission updates, meeting schedules, and contact information. While these traditional approaches served their purpose, they lacked efficiency, accuracy, and real-time accessibility. The digital transformation brought by this Laravel-based system addresses these challenges by centralizing school information management, streamlining the admission process through an online application system, enhancing communication between stakeholders, and showcasing school achievements and activities through an engaging digital platform.
+   
+   
+   
+   
+   
+   
+   
+   
+                                    Components
+Components
+Components
+Conceptual Framework   User Roles
+ Public/Viewers
+  Students
+  Teachers
+ Administrators
+Technology Stack
+ Laravel Framework 10.x
+  PHP 8.1+
+  MySQL 5.7+
+  Laravel Breeze
+  Blade Templates
+  Existing Process
+  Manual announcements
+  Printed flyers
+  Bulletin boards
+ Manual admission process
+User Roles
+ Public/Viewers
+  Students
+  Teachers
+ Administrators
+Technology Stack
+ Laravel Framework 10.x
+  PHP 8.1+
+  MySQL 5.7+
+  Laravel Breeze
+  Blade Templates
+  Existing Process
+  Manual announcements
+  Printed flyers
+  Bulletin boards
+ Manual admission process
+System Features
+ School information portal
+  Announcement system
+  Online admission forms
+  Class schedules
+  Notification system
+Content Types
+  Text content
+  Images
+  Documents (PDF)
+  Multimedia content
+  Accessibility
+  Public viewers
+  Authenticated students
+  Teachers (admin panel)
+ Administrators (full access)
+System Features
+ School information portal
+  Announcement system
+  Online admission forms
+  Class schedules
+  Notification system
+Content Types
+  Text content
+  Images
+  Documents (PDF)
+  Multimedia content
+  Accessibility
+  Public viewers
+  Authenticated students
+  Teachers (admin panel)
+ Administrators (full access)
+Requirements Analysis
+ Role-based access control
+ Authentication system
+ Content management
+ Online admission portal
+System Design
+ MVC Architecture
+ Database design
+ User interface design
+ Security implementation
+ Mobile responsiveness
+Implementation
+ Laravel development
+ Testing & validation 
+ Deployment
+  
+Requirements Analysis
+ Role-based access control
+ Authentication system
+ Content management
+ Online admission portal
+System Design
+ MVC Architecture
+ Database design
+ User interface design
+ Security implementation
+ Mobile responsiveness
+Implementation
+ Laravel development
+ Testing & validation 
+ Deployment
+  
+	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   Figure 1.1 Conceptual Framework
+ONLINE INFORMATION MANAGEMENT SYSTEM OF LITTLE FLOWER HIGH SCHOOL INC. SCHOOL INC.
+ONLINE INFORMATION MANAGEMENT SYSTEM OF LITTLE FLOWER HIGH SCHOOL INC. SCHOOL INC.
+Statement of the Problem
+   The Little Flower High School of Peñarrubia (LFHS) currently relies on manual methods for tracking school events, activities, and daily operations. This traditional approach presents several challenges, including data inaccuracies, inefficiency, and difficulty in accessing important records. Without an automated system, managing and retrieving information related to school announcements, student participation, and administrative tasks becomes time-consuming and prone to human error. The reliance on physical documents and bulletin boards limits the school's ability to provide timely updates to students, parents, and staff, leading to communication gaps and missed opportunities for engagement.
+   Moreover, the absence of a centralized digital platform makes it difficult for the school to maintain organized records, monitor event participation, and ensure that important information reaches all stakeholders. The existing manual system does not support online admission applications, making the enrollment process more cumbersome for prospective students and their families. Additionally, there is no efficient way to collect, manage, and respond to feedback from students, parents, and visitors, which hinders the school's ability to improve its services and address concerns promptly.
+   This study seeks to address the following questions:
+   1. How can the School Information Management System centralize and organize school information to improve accessibility and reduce reliance on manual record-keeping?
+   2. In what ways can the system enhance communication between administrators, teachers, students, and parents through features such as announcements, notifications, and a feedback system?
+   3. How can an online admission application feature streamline the enrollment process and make it more convenient for prospective students and their families?
+   4. What role-based access controls and features are necessary to ensure that public viewers, students, teachers, and administrators can effectively interact with the system based on their respective needs and responsibilities?
+Objectives of the Study
+   The main goal of this study is to develop and implement a comprehensive Laravel-based School Information Management System (SIMS) for Little Flower High School of Peñarrubia that centralizes school information, enhances communication between stakeholders, and streamlines administrative processes through a secure, role-based web platform with four distinct user levels: Public Viewers, Students, Teachers, and Administrators.
+   Specifically, this study aims to:
+   1. Develop a secure web-based platform using Laravel Framework with MySQL database that implements role-based access control for Public Viewers, Students, Teachers, and Administrators.
+   2. Create a comprehensive information portal that allows public viewers to access school information including the mission, vision, facilities, class schedules, announcements, student stories, and activities through an intuitive interface.
+   3. Implement an online admission application system with multi-step forms, file upload capabilities for documents (birth certificates, report cards, student photos), and automated email confirmation with tracking numbers.
+   4. Design and deploy a personalized student dashboard that displays today's schedule, weekly schedules, recent announcements, blog posts, student stories, and system statistics (courses, announcements, activities, facilities counts).
+   5. Build a content management system for teachers and administrators to create, read, update, and delete (CRUD) announcements, courses, facilities, activities, student stories, blog posts, and class schedules with soft delete functionality.
+   6. Establish comprehensive administrative controls including user management (account creation, role assignment, suspension), admission application processing (review, approval, rejection), comment moderation (approval/rejection workflow), and feedback management with response capabilities.
+   7. Integrate interactive feedback and commenting system with IP tracking for guests and user-ID tracking for authenticated users, implementing a moderation workflow where comments require admin approval before becoming public.
+   8. Develop a real-time notification system with bell icon badges, dropdown menus, and desktop notifications for announcements, schedule changes, event reminders, admin messages, and admission status updates.
+   9. Create a global search functionality with keyboard shortcuts (Ctrl+K/Cmd+K) that searches across announcements, courses, facilities, activities, stories, and blog posts with autocomplete suggestions and result categorization.
+   10. Implement a calendar system with monthly, weekly, and daily views that displays school events with color-coding and integrates class schedules showing teacher assignments and room information.
+   11. Ensure full mobile responsiveness with adaptive layouts, touch-friendly interfaces, mobile navigation, optimized images, and mobile-optimized modals for accessibility across all devices.
+Significance of the Study
+   The development of the Laravel-based School Information Management System for Little Flower High School of Peñarrubia carries significant value for multiple stakeholders:
+   School Administration, the system provides comprehensive tools for managing all aspects of school operations through an admin dashboard with complete CRUD functionality for content management, user account management with role assignment capabilities, admission application processing with review and approval workflows, comment moderation systems, feedback management with response features, and detailed analytics and statistics. This centralized control panel enables administrators to efficiently oversee school information, monitor system activity, and maintain security while reducing the administrative burden of manual processes.
+   Teachers, the system empowers them with content management capabilities to create and update announcements, manage course information, document school activities and facilities, publish student success stories and blog posts, maintain class schedules, and moderate student comments. These tools free teachers from administrative overhead, allowing them to focus more on instruction and student engagement while still maintaining effective communication channels with students and parents.
+   Students, the system serves as an organized and reliable source of information through a personalized dashboard showing today's schedule, weekly schedules, and recent announcements. Students can access course catalogs filtered by grade level, view school facilities and activities, read and react to student stories and blog posts, receive real-time notifications about school events and changes, manage their profiles including updating personal information and profile pictures, and submit feedback directly to administration. This promotes better participation and enables students to stay informed and engaged with school activities.
+   Parents and Guardians, the system enhances communication by providing easy access to school information, announcements, and events through the public portal. Parents can monitor school activities, view class schedules, access the school calendar, submit inquiries through the contact form, and apply for admission online with file upload capabilities and tracking numbers. This transparency strengthens the connection between home and school, fostering a more supportive learning community and enabling parents to stay actively involved in their child's education.
+   Prospective Students and Families, the system provides comprehensive information about the school through an accessible public interface showcasing the school's mission, vision, history, facilities, courses, and achievements. The online admission application system with multi-step forms, document upload capabilities, and automated email confirmations makes the enrollment process more convenient and efficient, reducing barriers to entry and improving the applicant experience.
+   IT Department and System Maintainers, the Laravel framework provides a robust, well-documented platform with built-in security features including authentication, authorization, and CSRF protection. The use of industry-standard technologies (PHP, MySQL, Blade Templates) ensures maintainability and the availability of technical support. The system's soft delete functionality preserves data integrity, while comprehensive logging and error handling facilitate troubleshooting and maintenance.
+   Future Researchers and Developers, this study serves as a valuable reference for the development of other school-based Management Information Systems using Laravel framework. It demonstrates best practices for implementing role-based access control with four distinct user levels, integrating authentication and authorization systems, building content management systems with CRUD operations, implementing notification systems, creating responsive web interfaces, and managing file uploads and document processing. The documentation provides insights into how Laravel's features can be leveraged to streamline operations and promote efficiency in academic institutions.
+Scope and Limitations
+   Scope of the Study
+   The School Information Management System encompasses four distinct user roles with specific features tailored to their needs:
+   Public/Viewer Features include access to general information pages (homepage with featured content, mission and vision, school history, alma mater, administrator directory, facilities showcase); academic information (courses catalog organized by grade level with search and filter capabilities, class schedules filtered by day and grade level); announcements and news (school announcements with search functionality, blog/news posts, student success stories, activities gallery); interactive features include an admission application system with multi-step forms, file uploads for birth certificates, report cards and student photos, tracking number generation, and email confirmation; contact form for inquiries with automatic email notifications; feedback submission with categories (complaints, suggestions, compliments) and IP tracking; content interaction through reactions (likes) on stories and blog posts, and commenting with admin approval workflow; and global search functionality with keyboard shortcuts (Ctrl+K/Cmd+K) searching across all content types with autocomplete suggestions.
+   Student User Features include a personalized dashboard displaying welcome messages, statistics overview (total courses, announcements, activities, facilities), today's schedule, this week's schedule, recent announcements, blog posts, and student stories; enhanced content access with pagination, search, and filtering for announcements, courses, facilities, activities, and stories; profile management allowing updates to personal information (name, email, phone), password changes with verification, and profile picture uploads (JPG/PNG, max 2MB); authenticated feedback submission with status tracking; calendar and events viewing with monthly, weekly, and daily views; comprehensive notification system with bell icon badges, notification dropdown, types including announcement notifications, schedule changes, event reminders, and admin messages, with mark as read/unread, delete, and clear all actions; and enhanced interactions with reactions and comments tracked by user ID for authenticated accountability.
+   Teacher Features include access to the admin panel with dashboard statistics and analytics; full CRUD (Create, Read, Update, Delete) operations for announcements (with image support and preview), courses/subjects (assigned to grade levels with images and descriptions), facilities (with photos and detailed descriptions), activities (with multiple photo galleries and date management), student stories (with grade levels and featured images), blog/news posts (with author attribution), and class schedules (with teacher assignments and time slots); content management with soft delete functionality for data preservation; comment moderation capabilities to approve or decline user-submitted feedback; and event calendar management with create, edit, and delete functions.
+   Administrator Features include all teacher features plus comprehensive user management (create accounts with role assignment, view and edit user profiles, assign roles: student, teacher, or admin, suspend or delete accounts, search and filter users by role or status); admission management (review applications with applicant details and uploaded files, approve or reject applications, export data to Excel/CSV, filter by status and grade level, automated email notifications to applicants); complete content management across all system modules with soft delete and restore capabilities; comment and feedback management (approve, reject, or delete comments, reply to feedback, view feedback categories and statistics); system settings and configuration (manage school information, configure email notifications, set system permissions); advanced dashboard with detailed analytics including user statistics, admission trends, content metrics, and recent activity logs; data export capabilities (Excel for admissions, CSV for user lists and feedback); and system security features including audit logging, user activity tracking, and data backup functionality.
+   Technology Stack includes Laravel Framework 10.x as the backend framework, PHP 8.1 or higher, MySQL 5.7+ or MariaDB 10.3+ database, Laravel Breeze for authentication, Blade Templates for frontend, standard PHP extensions (BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML), mobile-responsive design compatible with Chrome, Firefox, Safari, Edge, and mobile browsers.
+Limitations of the Study
+   The following features are not included in the current system:
+   1. Online class enrollment - Students cannot select or enroll in specific subjects or class schedules through the system. Enrollment remains a manual process conducted through the registrar's office.
+   2. Learning Management System (LMS) features - The system does not include online quizzes, assignment submissions, digital gradebooks, course materials distribution, or online examinations. Academic content delivery remains through traditional classroom methods.
+   3. Student grade management and reporting - No features for recording, calculating, or displaying student grades, academic performance tracking, progress reports, or report card generation. Grade management remains separate from this system.
+   4. Financial management and payment processing - No integration with payment gateways, tuition fee management, billing systems, payment tracking, or financial reporting capabilities. Financial transactions remain handled through separate systems.
+   5. User gallery and media management - Students cannot upload or manage their own collections of photos or media within their profiles. Media content is managed exclusively by administrators and teachers.
+   6. Alumni tracking and networking - No features to monitor or maintain connections with former students after graduation, alumni directory, or alumni engagement tools.
+   7. Mobile application version - The system is only accessible through web browsers (mobile-responsive website) and does not offer a dedicated native mobile app for iOS or Android devices.
+   8. Parent/guardian portal - While parents can view public information and apply for admission, there is no dedicated parent portal for monitoring their child's attendance, grades, or behavior, or for direct messaging with teachers.
+   9. Attendance tracking system - No features for recording, monitoring, or reporting student and teacher attendance. Attendance management remains a manual process.
+   10. Real-time chat or messaging - No instant messaging features between users. Communication occurs through announcements, notifications, feedback forms, and comments with moderation.
+Definition of Terms
+   Account Management. The process of handling user profiles, including sign-ups, logins, profile updates, password management, and account recovery options.
+   Administrator. A user with the highest level of system access who can manage all content, user accounts, admission applications, feedback, and system settings through the admin dashboard.
+   Admission Application System. An online form allowing prospective students to submit applications with personal information, guardian details, file uploads, and tracking numbers with email confirmation.
+   Blade Templates. Laravel's simple yet powerful templating engine for creating dynamic views and user interfaces in the web application.
+   Comment Moderation. A system function allowing administrators and teachers to review, approve, or decline user-submitted comments before they become publicly visible.
+   CRUD Operations. Create, Read, Update, and Delete - the four basic functions for managing data within the system's content management features.
+   Dashboard. A personalized overview page displaying relevant statistics, announcements, schedules, and quick access links tailored to the user's role.
+   Data Integrity. Ensuring that data remains accurate, consistent, complete, and secure within the system throughout its lifecycle.
+   Email Verification. A security feature in Laravel Breeze ensuring that registered users verify their email address before accessing authenticated features of the system.
+   Laravel Breeze. A minimal, simple implementation of Laravel's authentication features including login, registration, password reset, email verification, and password confirmation.
+   Laravel Framework. A PHP web application framework version 10.x used as the foundation for building the School Information Management System with built-in security, authentication, and database features.
+   Management Information System (MIS). A digital system that helps administrators, teachers, students, and parents track school activities, events, and important records efficiently through centralized data management.
+   MySQL Database. A relational database management system version 5.7+ used to store, organize, and retrieve all system data including users, content, applications, and interactions.
+   Notification System. A real-time alert mechanism with bell icon badges and dropdown menus that delivers announcements, schedule changes, event reminders, and admin messages to authenticated users.
+   Role-Based Access Control. A security approach that restricts system access and features based on user roles: Public/Viewers, Students, Teachers, and Administrators, each with specific permissions.
+   School Information Management System (SIMS). A comprehensive Laravel-powered web-based platform that centralizes school information management, facilitates admissions, enables stakeholder communication, and showcases school achievements.
+   Soft Delete. A data management feature that marks records as deleted without permanently removing them from the database, allowing for data recovery and maintaining historical records.
+   Student. An authenticated user with access to personalized dashboards, schedules, announcements, profile management, and interactive features like reactions and comments.
+   Teacher. An authenticated user with content management capabilities including CRUD operations for announcements, courses, facilities, activities, stories, and class schedules.
+   Web-Based Platform. An application accessed through web browsers that is mobile-responsive and works across different devices without requiring software installation, using standard web technologies.
+    

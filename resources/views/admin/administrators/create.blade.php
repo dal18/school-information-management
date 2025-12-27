@@ -1,0 +1,208 @@
+@extends('layouts.admin')
+
+@section('title', 'Create Administrator')
+
+@section('header')
+<div class="flex justify-between items-center mb-6">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900">Add Administrator</h1>
+        <p class="text-gray-600 mt-1">Create a new administrator profile</p>
+    </div>
+    <a href="{{ route('admin.administrators.index') }}"
+        class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-6 py-2 rounded-lg transition duration-300">
+        <i class="fas fa-arrow-left mr-2"></i>Back
+    </a>
+</div>
+@endsection
+
+@section('content')
+<div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md p-8">
+        <form action="{{ route('admin.administrators.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <!-- Name -->
+            <div class="mb-6">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name <span class="text-red-500">*</span>
+                </label>
+                <input type="text"
+                    name="name"
+                    id="name"
+                    value="{{ old('name') }}"
+                    required
+                    placeholder="e.g., Dr. John Doe"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('name') border-red-500 @enderror">
+                @error('name')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Position -->
+            <div class="mb-6">
+                <label for="position" class="block text-sm font-medium text-gray-700 mb-2">
+                    Position/Title <span class="text-red-500">*</span>
+                </label>
+                <input type="text"
+                    name="position"
+                    id="position"
+                    value="{{ old('position') }}"
+                    required
+                    placeholder="e.g., School Director, Principal, Administrative Officer"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('position') border-red-500 @enderror">
+                @error('position')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Category -->
+            <div class="mb-6">
+                <label for="category" class="block text-sm font-medium text-gray-700 mb-2">
+                    Category <span class="text-red-500">*</span>
+                </label>
+                <select name="category" id="category" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('category') border-red-500 @enderror">
+                    <option value="">Select Category</option>
+                    <option value="Directors" {{ old('category') == 'Directors' ? 'selected' : '' }}>Directors</option>
+                    <option value="Principals" {{ old('category') == 'Principals' ? 'selected' : '' }}>Principals</option>
+                    <option value="Administrative Staff" {{ old('category') == 'Administrative Staff' ? 'selected' : '' }}>Administrative Staff</option>
+                </select>
+                @error('category')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Email -->
+            <div class="mb-6">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address
+                </label>
+                <input type="email"
+                    name="email"
+                    id="email"
+                    value="{{ old('email') }}"
+                    placeholder="johndoe@example.com"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('email') border-red-500 @enderror">
+                @error('email')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-6">
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                </label>
+                <input type="text"
+                    name="phone"
+                    id="phone"
+                    value="{{ old('phone') }}"
+                    placeholder="e.g., +63 912 345 6789"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('phone') border-red-500 @enderror">
+                @error('phone')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Bio -->
+            <div class="mb-6">
+                <label for="bio" class="block text-sm font-medium text-gray-700 mb-2">
+                    Biography
+                </label>
+                <textarea
+                    name="bio"
+                    id="bio"
+                    rows="6"
+                    placeholder="Provide a brief biography, qualifications, and achievements..."
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('bio') border-red-500 @enderror">{{ old('bio') }}</textarea>
+                @error('bio')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+                <p class="mt-2 text-sm text-gray-500">Optional: Add educational background, experience, and notable achievements.</p>
+            </div>
+
+            <!-- Image -->
+            <div class="mb-6">
+                <label for="image" class="block text-sm font-medium text-gray-700 mb-2">
+                    Profile Image
+                </label>
+                <input type="file"
+                    name="image"
+                    id="image"
+                    accept="image/jpeg,image/jpg,image/png"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('image') border-red-500 @enderror">
+                @error('image')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+                <p class="mt-2 text-sm text-gray-500">Accepted formats: JPG, JPEG, PNG (Max 5MB). Recommended: Square image, at least 400x400px</p>
+
+                <!-- Image Preview -->
+                <div id="imagePreview" class="mt-4 hidden">
+                    <p class="text-sm font-medium text-gray-700 mb-2">Preview:</p>
+                    <img id="previewImage" src="" alt="Preview" class="max-w-xs rounded-lg border border-gray-300">
+                </div>
+            </div>
+
+            <!-- Display Order -->
+            <div class="mb-6">
+                <label for="display_order" class="block text-sm font-medium text-gray-700 mb-2">
+                    Display Order
+                </label>
+                <input type="number"
+                    name="display_order"
+                    id="display_order"
+                    value="{{ old('display_order', 0) }}"
+                    min="0"
+                    placeholder="0"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent @error('display_order') border-red-500 @enderror">
+                @error('display_order')
+                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+                <p class="mt-2 text-sm text-gray-500">Lower numbers appear first. Leave as 0 to add at the end.</p>
+            </div>
+
+            <!-- Info Box -->
+            <div class="mb-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-blue-600 mt-1 mr-3"></i>
+                    <div class="text-sm text-blue-800">
+                        <p class="font-semibold mb-1">Administrator Visibility</p>
+                        <p>This administrator profile will be visible on the public Administration page once created.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Buttons -->
+            <div class="flex items-center justify-end space-x-4 pt-6 border-t">
+                <a href="{{ route('admin.administrators.index') }}"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-8 py-3 rounded-lg transition duration-300">
+                    Cancel
+                </a>
+                <button type="submit"
+                    class="bg-primary-600 hover:bg-primary-700 text-white font-semibold px-8 py-3 rounded-lg transition duration-300">
+                    <i class="fas fa-save mr-2"></i>Create Administrator
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection
+
+@push('scripts')
+<script>
+    // Image preview
+    document.getElementById('image').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('previewImage').src = e.target.result;
+                document.getElementById('imagePreview').classList.remove('hidden');
+            }
+            reader.readAsDataURL(file);
+        } else {
+            document.getElementById('imagePreview').classList.add('hidden');
+        }
+    });
+</script>
+@endpush

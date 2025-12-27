@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Modal Test</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        body { font-family: sans-serif; margin: 20px; }
+        .btn { padding: 10px 20px; background: #3b82f6; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50; display: flex; align-items: center; justify-center; }
+        .modal-content { background: white; padding: 20px; border-radius: 10px; max-width: 500px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Search Modal Test</h1>
+    <button @click="$dispatch('open-search')" class="btn">Open Search Modal</button>
+
+    <!-- Search Modal -->
+    <div x-data="{ open: false }"
+         @open-search.window="open = true; console.log('Search opened')"
+         @keydown.escape.window="open = false"
+         x-show="open"
+         x-cloak
+         class="modal">
+        <div class="modal-content" @click.stop>
+            <h2>Search</h2>
+            <input type="text" placeholder="Type to search..." style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+            <button @click="open = false" class="btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        console.log('Alpine.js loaded:', typeof Alpine !== 'undefined');
+    </script>
+</body>
+</html>

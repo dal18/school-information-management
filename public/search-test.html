@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Test</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        [x-cloak] { display: none !important; }
+        body { font-family: sans-serif; padding: 20px; background: #f3f4f6; }
+        .btn { padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+        .btn:hover { background: #2563eb; }
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9999; display: flex; align-items: start; justify-content: center; padding-top: 100px; }
+        .modal-content { background: white; padding: 30px; border-radius: 16px; max-width: 600px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .search-input { width: 100%; padding: 12px 40px 12px 40px; font-size: 18px; border: 1px solid #d1d5db; border-radius: 8px; }
+        .search-input:focus { outline: none; border-color: #3b82f6; }
+        .close-btn { position: absolute; top: 20px; right: 20px; background: #f3f4f6; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+        .result-item { padding: 12px; border-bottom: 1px solid #e5e7eb; }
+        .result-item:hover { background: #f9fafb; }
+        .status { margin-top: 20px; padding: 10px; background: #dbeafe; border-radius: 8px; color: #1e40af; }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h1 style="margin-bottom: 30px;">🔍 Search Modal Test</h1>
+
+        <button @click="$dispatch('open-search')" class="btn">
+            <i class="fas fa-search"></i> Click to Test Search Modal
+        </button>
+
+        <div class="status">
+            <strong>Alpine.js Status:</strong>
+            <span x-data x-text="'✅ Working!'">Loading...</span>
+        </div>
+
+        <div class="status" style="margin-top: 10px; background: #fef3c7; color: #92400e;">
+            <strong>Instructions:</strong><br>
+            1. Click the button above<br>
+            2. Modal should open<br>
+            3. Type something in the search box<br>
+            4. Press ESC or click outside to close
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div x-data="{ open: false }"
+         @open-search.window="open = true; console.log('✅ Modal opened')"
+         @keydown.escape.window="open = false; console.log('❌ Modal closed')">
+
+        <div x-show="open"
+             x-cloak
+             class="modal"
+             @click="open = false">
+
+            <div class="modal-content"
+                 @click.stop
+                 style="position: relative;">
+
+                <button @click="open = false" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <h2 style="margin-bottom: 20px;">Search</h2>
+
+                <div style="position: relative;">
+                    <i class="fas fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                    <input type="text"
+                           class="search-input"
+                           placeholder="Type to search..."
+                           x-ref="searchInput"
+                           @focus="console.log('🎯 Input focused')">
+                </div>
+
+                <div style="margin-top: 20px; padding: 20px; background: #f9fafb; border-radius: 8px; text-align: center; color: #6b7280;">
+                    <i class="fas fa-info-circle"></i> This is a test modal. The real one will show actual search results.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('%c✅ Alpine.js loaded: ' + (typeof Alpine !== 'undefined'), 'color: green; font-size: 14px; font-weight: bold');
+        console.log('%c📝 Check console for event logs when you interact with the modal', 'color: blue; font-size: 12px');
+    </script>
+</body>
+</html>

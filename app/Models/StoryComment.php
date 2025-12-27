@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class StoryComment extends Model
+{
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'story_id',
+        'user_id',
+        'commenter_name',
+        'commenter_email',
+        'comment',
+        'is_approved',
+        'approved_by',
+        'approved_at',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'is_approved' => 'boolean',
+            'approved_at' => 'datetime',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+            'deleted_at' => 'datetime',
+        ];
+    }
+
+    // Scopes
+    public function scopeApproved($query)
+    {
+        return $query->where('is_approved', true);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('is_approved', false);
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at', 'desc');
+    }
+
+    // Relationships
+    public function story()
+    {
+        return $this->belongsTo(Story::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function approver()
+    {
+        return $this->belongsTo(User::class, 'approved_by');
+    }
+
+    // Accessors
+    public function getCommenterDisplayNameAttribute()
+    {
+        if ($this->user_id) {
+            return $this->user->name ?? 'Anonymous';
+        }
+        return $this->commenter_name ?? 'Anonymous';
+    }
+}
